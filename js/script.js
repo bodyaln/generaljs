@@ -38,8 +38,16 @@ personalMovieDB.movies[a] = b;
 personalMovieDB.movies[c] = d; */
 for (let index = 0; index < 2; index++) {
     const a = prompt('Один из последних просмотренных фильмов?', ''),
-      b = prompt('На сколько оцените его?', '');
-      personalMovieDB.movies[a] = b;
+          b = prompt('На сколько оцените его?', '');
+    if(a!=null && b!=null && a!='' && b!='' && a.length<50 && b.length<50){
+        personalMovieDB.movies[a] = b;
+        console.log('Ok');
+    }
+    else{
+        console.log('Eror');
+        index--;
+    }
+     
 }
 
 console.log(personalMovieDB);
